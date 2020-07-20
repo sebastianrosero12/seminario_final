@@ -5,9 +5,87 @@
   <title>Proyecto</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="assets\css\bootstrap.min.css">
+  <!-- style css -->
+  <link rel="stylesheet" href="assets\css\style.css">
+  <link rel="stylesheet" href="assets\css\admin.css">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="assets\css\responsive.css">
+  <script src="https://kit.fontawesome.com/e441110e2e.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </head>
+<style> 
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: #5a2cda;
+    color: white;
+    font-weight: 600;
+  }
+
+</style>
+<div class="loader_bg">
+  <div class="loader"><img src="assets\images\loading.gif" alt="#" /></div>
+</div>
+<header >
+  <div class="toolbar" role="banner">
+    <div class="container-fluid">
+       <div class="row">
+          <div class="logos">
+            <a href="{{ url('/') }}"><img src="assets\images\logo.png" alt="#" /></a>
+          </div>
+          <div class="col-xl-9 col-lg-9 col-md-8 col-sm-3">
+             <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExample04">
+                   <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                         <a href="./admin" class="nav-link"><i class="fas fa-home"></i> Admin</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link"  href="./productos"><i class="fas fa-box-open"></i> Productos</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link" href="./users"><i class="fas fa-users-cog"></i> Usuarios</a>
+                      </li>
+                      <li class="nav-item" >
+                        <a class="nav-link" href="./logout">
+                         {{Auth::user()->nombre}}
+                         <!-- // {{Auth::user()->nombre}} {{Auth::user()->apellido}} </a> -->
+                      </li>
+                      <li class="nav-item d_none" >
+                         <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{url('/logout')}}" data-toggle="tooltip"  data-placement="down" title="Salir">
+                           <i class="fas fa-sign-out-alt"></i></a>
+                      </li>
+                   </ul>
+                </div>
+             </nav>
+          </div>
+       </div>
+    </div>
+ </div>
+</header>
+
 <body>
-  <app-root></app-root>
+      
+  <app-root>aqui el app root</app-root>
+  <script src="assets\js\custom.js"></script>
 </body>
 </html>
